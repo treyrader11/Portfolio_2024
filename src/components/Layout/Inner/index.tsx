@@ -1,5 +1,7 @@
+import Header from "@/components/Header";
 import { cn } from "@/lib/utils";
 import { motion, Variants } from "framer-motion";
+import { slide, opacity, perspective } from './animation';
 
 type InnerProps = {
   children: React.ReactNode;
@@ -7,19 +9,22 @@ type InnerProps = {
   className?: string;
 };
 
-export default function Inner({
+export default function Layout({
   children,
   backgroundColor,
   className,
 }: InnerProps) {
   const innerClass = {
-    base: cn("bg-black", backgroundColor, className),
+    inner: cn(
+      "bg-black p-[40px] min-h-[calc(100vh_-_80px)]",
+      backgroundColor,
+      className
+    ),
     page: cn("bg-white"),
     slide: cn(
       "fixed top-0 left-0 z-[1]",
       "w-screen h-screen",
-      "bg-red-600"
-      // "bg-white"
+      "bg-white"
     ),
   };
 
@@ -32,35 +37,14 @@ export default function Inner({
     };
   };
 
-  const opacity = {
-    initial: {
-      opacity: 0,
-    },
-    enter: {
-      opacity: 1,
-    },
-    exit: {
-      opacity: 1,
-    },
-  };
-
-  const slide = {
-    initial: {
-      top: "100vh",
-    },
-    enter: {
-      top: "100vh",
-    },
-    exit: {
-      top: "0",
-    },
-  };
-
   return (
-    <div className={innerClass.base}>
-      <div {...anim(slide)} className={innerClass.slide} />
-      <motion.div {...anim(opacity)} className={innerClass.page}>
-        {children}
+    <div className={innerClass.inner}>
+      <motion.div {...anim(slide)} className={innerClass.slide} />
+      <motion.div className={innerClass.page} {...anim(perspective)}>
+        <motion.div {...anim(opacity)} className={innerClass.page}>
+          <Header />
+          {children}
+        </motion.div>
       </motion.div>
     </div>
   );
