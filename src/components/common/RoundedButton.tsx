@@ -83,7 +83,7 @@ export default function RoundedButton({
           ref={circle}
           style={{ backgroundColor }}
           className={buttonClass.circle}
-        ></div>
+        />
       </div>
     </Magnetic>
   );

@@ -9,9 +9,9 @@ import Image from "next/image";
 import MaxWidthWrapper from "../common/MaxWidthWrapper";
 import { cn, scrollTo } from "@/lib/utils";
 import useFollowPointer from "@/hooks/useFollowPointer";
-import Magnetic from "../common/Magnetic";
 import Navbar from "../Navbar";
 import RoundedButton from "../common/RoundedButton";
+import Header from "../Header";
 
 const heroClass = {
   base: "",
@@ -32,6 +32,7 @@ export default function Hero() {
       id="hero"
       className="w-full h-[100vh] relative bg-[#111111] overflow-hidden"
     >
+      {/* <Header /> */}
       <motion.span
         ref={ref}
         animate={{ x, y }}
