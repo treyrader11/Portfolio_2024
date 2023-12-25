@@ -5,6 +5,7 @@ import Curve from "@/components/Layout/Curve";
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import Testimonials from "@/components/Testimonials";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <Testimonials />
       </Curve>
     </>
   );
