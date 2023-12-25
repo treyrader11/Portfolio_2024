@@ -6,7 +6,6 @@ import pe2 from "/public/sec-4-p-e-2.png";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-// import "./slider.css";
 import Div from "../common/Div";
 import MaxWidthWrapper from "../common/MaxWidthWrapper";
 
