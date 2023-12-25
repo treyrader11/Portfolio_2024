@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import { motion, Variants } from "framer-motion";
 import { slide, opacity, perspective } from './animation';
